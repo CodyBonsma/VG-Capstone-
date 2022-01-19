@@ -1,3 +1,10 @@
 .spacer {
     flex: 1 1 auto;
 }
+
+.sticky {
+    position: sticky;
+  position: -webkit-sticky;
+  top: 0; /* required */
+  z-index: 1000;
+}
