@@ -1,4 +1,6 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { ApiService } from '../api.service';
 
 @Component({
   selector: 'app-etf',
@@ -7,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ETFComponent implements OnInit {
 
-  constructor() { }
+  constructor(private apiService: ApiService, private http: HttpClient) { }
 
   ngOnInit(): void {
+    this.apiService.getETFs().subscribe((payload) => {
+      console.log("this is the ETF payload:", payload)
+    })
   }
 
 }
